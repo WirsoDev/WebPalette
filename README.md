@@ -1,57 +1,141 @@
-# WebPalette
+# Color Harvest 🎨
 
-WebPalette is a Python-based project designed to help users generate and manage color palettes for web development. The main functionality is implemented in `main.py`.
+Color Harvest is a Python tool that extracts and analyzes the color palette from any website. It helps designers, developers, and artists identify and use the exact colors from their favorite websites.
 
 ## Features
 
-- Generate color palettes.
-- Save and manage palettes for web projects.
-- Easy-to-use interface.
+- 🌈 Extract the most common colors from any website
+- 🖼️ Analyze colors from CSS, inline styles, and images
+- ⚙️ Filter out grayscale, white, or black colors
+- 📊 Generate a visual HTML palette for easy reference
+- 💾 Export results to JSON for further processing
+- 📋 One-click copy of hex values in the HTML output
 
-## Getting Started
+## Installation
 
-### Prerequisites
-
-Ensure you have Python 3.7 or higher installed on your system. You can download it from [python.org](https://www.python.org/).
-
-### Installation
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/yourusername/WebPalette.git
-    cd WebPalette
-    ```
-
-2. Install the required dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-### Usage
-
-Run the `main.py` script to start the application:
 ```bash
-python main.py
+# Clone the repository
+git clone https://github.com/yourusername/color-harvest.git
+cd color-harvest
+
+# Install dependencies
+pip install -r requirements.txt
 ```
 
-Follow the on-screen instructions to generate and manage your color palettes.
+### Requirements
 
-## Dependencies
+- Python 3.6+
+- BeautifulSoup4
+- Requests
+- Pillow
 
-The project relies on the following Python libraries:
-- `colorama` (for terminal color output)
-- `argparse` (for command-line argument parsing)
+## Usage
 
-Make sure all dependencies are installed using the `requirements.txt` file.
+### Basic Usage
+
+```bash
+python color_harvest.py https://example.com
+```
+
+This will:
+1. Extract up to 20 most common colors from the website
+2. Filter out grayscale, white, and black colors by default
+3. Save results to a JSON file named after the domain
+4. Generate an HTML visualization of the color palette
+
+### Command Line Options
+
+```bash
+python color_harvest.py https://example.com [options]
+```
+
+| Option | Description |
+|--------|-------------|
+| `--colors N` | Number of colors to extract (default: 20) |
+| `--output NAME` | Custom output filename base (without extension) |
+| `--keep-grayscale` | Include grayscale colors in results |
+| `--keep-white` | Include white colors in results |
+| `--keep-black` | Include black colors in results |
+| `--keep-all` | Include all colors (no filtering) |
+
+### Examples
+
+Extract 30 colors from a website and include grayscale colors:
+```bash
+python color_harvest.py https://example.com --colors 30 --keep-grayscale
+```
+
+Save results with a custom filename:
+```bash
+python color_harvest.py https://example.com --output my_color_palette
+```
+
+Include all colors without filtering:
+```bash
+python color_harvest.py https://example.com --keep-all
+```
+
+## Output
+
+### JSON Format
+
+The tool creates a JSON file with the following structure:
+
+```json
+{
+  "url": "https://example.com",
+  "colors": [
+    {"hex": "#3498db", "frequency": 42},
+    {"hex": "#e74c3c", "frequency": 27},
+    ...
+  ],
+  "filters": {
+    "grayscale_filtered": true,
+    "white_filtered": true,
+    "black_filtered": true
+  }
+}
+```
+
+### HTML Visualization
+
+The generated HTML file provides a visual representation of the color palette with:
+- Color preview
+- Hex value (clickable to copy)
+- RGB value
+- Occurrence count
+
+## How It Works
+
+Color Harvest analyzes websites through several methods:
+
+1. Extracts colors from `<style>` tags in the HTML
+2. Finds colors in inline style attributes
+3. Downloads and analyzes linked CSS files
+4. Processes images to identify dominant colors
+5. Filters results based on user preferences
+6. Generates a count of color occurrences
+7. Creates an interactive HTML visualization
 
 ## Contributing
 
-Contributions are welcome! Feel free to fork the repository and submit a pull request.
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Contact
+## Acknowledgments
 
-For questions or feedback, please contact [your-email@example.com].
+- [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/) for HTML parsing
+- [Pillow](https://python-pillow.org/) for image processing
+
+---
+
+Made with ❤️
