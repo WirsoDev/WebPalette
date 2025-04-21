@@ -1,4 +1,4 @@
-# Color Harvest 🎨
+# WebPalette 🎨
 
 Color Harvest is a Python tool that extracts and analyzes the color palette from any website. It helps designers, developers, and artists identify and use the exact colors from their favorite websites.
 
@@ -52,7 +52,7 @@ python color_harvest.py https://example.com [options]
 | Option | Description |
 |--------|-------------|
 | `--colors N` | Number of colors to extract (default: 20) |
-| `--output NAME` | Custom output filename base (without extension) |
+| `--output NAME` | Custom output filename base |
 | `--keep-grayscale` | Include grayscale colors in results |
 | `--keep-white` | Include white colors in results |
 | `--keep-black` | Include black colors in results |
@@ -126,16 +126,3 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/) for HTML parsing
-- [Pillow](https://python-pillow.org/) for image processing
-
----
-
-Made with ❤️

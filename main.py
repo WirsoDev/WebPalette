@@ -1,3 +1,4 @@
+#!/Users/wilson/dev/WebPalette/venv/bin/python
 import requests
 from bs4 import BeautifulSoup
 import re
@@ -255,7 +256,7 @@ def generate_html_page(url, colors_data, output_file):
 </head>
 <body>
     <header>
-        <h1>Color Harvest</h1>
+        <h1>WebPallet</h1>
         <div class="subtitle">Color palette for <a href="{url}" target="_blank">{site_name}</a></div>
     </header>
 
@@ -295,7 +296,7 @@ def generate_html_page(url, colors_data, output_file):
     <div class="copy-message" id="copyMessage">Copied to clipboard!</div>
 
     <footer>
-        <p>Generated with Color Harvest</p>
+        <p>Generated with WebPalette</p>
     </footer>
 
     <script>
@@ -487,4 +488,3 @@ if __name__ == "__main__":
     main()
 
 
-    
