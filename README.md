@@ -15,8 +15,8 @@ Color Harvest is a Python tool that extracts and analyzes the color palette from
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/color-harvest.git
-cd color-harvest
+git clone https://github.com/WirsoDev/WebPalette
+cd WebPalette
 
 # Install dependencies
 pip install -r requirements.txt
@@ -34,7 +34,7 @@ pip install -r requirements.txt
 ### Basic Usage
 
 ```bash
-python color_harvest.py https://example.com
+python main.py https://example.com
 ```
 
 This will:
@@ -46,7 +46,7 @@ This will:
 ### Command Line Options
 
 ```bash
-python color_harvest.py https://example.com [options]
+python main.py https://example.com [options]
 ```
 
 | Option | Description |
@@ -62,17 +62,17 @@ python color_harvest.py https://example.com [options]
 
 Extract 30 colors from a website and include grayscale colors:
 ```bash
-python color_harvest.py https://example.com --colors 30 --keep-grayscale
+python main.py https://example.com --colors 30 --keep-grayscale
 ```
 
 Save results with a custom filename:
 ```bash
-python color_harvest.py https://example.com --output my_color_palette
+python main.py https://example.com --output my_color_palette
 ```
 
 Include all colors without filtering:
 ```bash
-python color_harvest.py https://example.com --keep-all
+python main.py https://example.com --keep-all
 ```
 
 ## Output
@@ -107,7 +107,7 @@ The generated HTML file provides a visual representation of the color palette wi
 
 ## How It Works
 
-Color Harvest analyzes websites through several methods:
+WebPallet analyzes websites through several methods:
 
 1. Extracts colors from `<style>` tags in the HTML
 2. Finds colors in inline style attributes
